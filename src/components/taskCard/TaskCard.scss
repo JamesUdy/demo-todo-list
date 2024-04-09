@@ -1,0 +1,184 @@
+@import '/src/styles.scss';
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+// Mixins
+@mixin card {
+    width: 100%;
+    break-inside: avoid-column;
+    background: $slate900;
+    padding: 0.48rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: fit-content;
+    gap: 0.24rem;
+    border-radius: 0.4rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08), 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+// Styles
+.card {
+    @include card;
+
+    .card-content {
+        display: flex;
+        flex-direction: column;
+        gap: 0.24rem;
+
+        .card-operations {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.32rem 0;
+
+            > .tag {
+                margin-left: 0.16rem;
+                padding: 0 0.5rem;
+                border-radius: 0.24rem;
+                font-size: 0.8rem;
+                color: $slate200;
+            }
+
+            > div {
+                display: flex;
+                gap: 0.40rem;
+
+                > span {
+                    cursor: pointer;
+                }
+            }
+        }
+
+        .card-body {
+            display: flex;
+            padding: 0 0.5rem;
+            flex-direction: column;
+            gap: 0.4rem;
+
+            > div {
+                display: flex;
+                align-items: center;
+                gap: 0.40rem;
+            }
+
+            .card-title {
+                font-size: 1.04rem;
+                font-weight: 600;
+
+                &.completed {
+                    text-decoration: line-through;
+                }
+            }
+
+            .task-progress-dot {
+                width: 0.64rem;
+                height: 0.64rem;
+                padding: 2px;
+                border-radius: 100%;
+                &.in-progress {
+                    background-color: $orange500;
+                    animation: pulse 1s infinite;
+                }
+                &.completed {
+                    background-color: $green500;
+                    animation: pulse 1s infinite;
+                }
+                &.yet-to-start {
+                    background-color: $gray100;
+                    animation: bounce 1s infinite;
+                }
+            }
+
+            .card-description {
+                font-size: 0.96rem;
+                font-weight: 400;
+            }
+        }
+    }
+
+    .card-footer {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.64rem 0.5rem 0 0.5rem;
+
+        > .date {
+            text-align: end;
+            width: 100%;
+            font-size: 0.64rem;
+            font-weight: 600;
+            color: $slate500;
+            padding-right: 0.56rem;
+        }
+
+        .due-date-container {
+            position: relative;
+            width: 100%;
+
+            > span {
+                padding: 0.16rem 0.25rem;
+                font-size: 0.875rem;
+                border-radius: 0.25rem;
+                color: white;
+                width: fit-content;
+                display: inline-block;
+
+                &.hidden {
+                    display: none;
+                }
+
+                &.diffGreaterThanThree {
+                    display: block;
+                    background: #f87171;
+                    animation: pulse 2s infinite;
+                }
+
+                &.diffLessThanZero {
+                    display: block;
+                    background: #450a0a;
+                    animation: bounce 2s infinite;
+                }
+
+                &.diffGreaterThanZero {
+                    display: block;
+                    background: #b91c1c;
+                    animation: pulse 2s infinite;
+                }
+            }
+        }
+    }
+}
+
+// Media query
+@media (max-width: 640px) {
+    .card {
+        .card-title {
+            font-size: 0.72rem;
+        }
+        .card-description {
+            font-size: 0.64rem;
+        }
+        .card-footer {
+            padding: 0.64rem 0.5rem 0.5rem 0.5rem;
+        }
+    }
+}

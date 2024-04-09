@@ -1,0 +1,88 @@
+@import "/src/styles.scss";
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.64rem 0.64rem;
+    margin: 0 0.4rem;
+}
+
+.website-logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.website-logo > div > img {
+    width: 6.4rem;
+    display: inline-block;
+}
+
+.website-logo > span {
+    display: block;
+    font-size: 2.4rem;
+    padding-top: 0.24rem;
+    font-weight: 800;
+    letter-spacing: -0.05rem;
+    color: $slate200;
+}
+
+.navLinks {
+    display: flex;
+    align-items: center;
+    gap: 1.6rem;
+}
+
+.navLinks > section {
+    font-size: 1rem;
+    font-weight: 800;
+    display: flex;
+    gap: 2.4rem;
+}
+
+.navLinks > section > .navLink {
+    text-decoration: none;
+    color: $slate200;
+}
+
+.navLinks > section > .navLink > span {
+    transition: ease-in;
+    transition-duration: 1000ms;
+}
+
+.navLinks > section > .navLink > span.underlined {
+    text-decoration: underline;
+    text-underline-offset: 0.24rem;
+}
+
+.navLinks > section > .navLink > span:not(.underlined):hover {
+    text-decoration: underline;
+    text-underline-offset: 0.24rem;
+}
+
+@media (max-width: 640px) {
+    .navbar-container {
+        padding: 0;
+    }
+
+    .website-logo > div > img {
+        width: 4rem;
+    }
+
+    .website-logo > span {
+        display: none;
+    }
+
+    .navLinks {
+        gap: 0.8rem;
+    }
+
+    .navLinks > section {
+        font-size: 0.8rem;
+        font-weight: 800;
+        display: flex;
+        gap: 1.6rem;
+    }
+}

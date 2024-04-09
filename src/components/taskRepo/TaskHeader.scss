@@ -1,0 +1,81 @@
+@import "/src/styles.scss";
+
+.taskHeader-container {
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.64rem;
+}
+
+// .taskHeader-container > .taskHeader-info {
+//     position: relative;
+//     transition: ease-in;
+//     transition-duration: 200ms;
+// }
+
+// .taskHeader-info > .infoPopup {
+//     position: absolute;
+//     display: none;
+//     left: 1.6rem;
+//     top: 0;
+//     background: $slate200;
+//     color: $slate950;
+//     padding: 0.25rem 0.5rem;
+//     font-size: 0.72rem;
+//     transition: ease-in;
+//     transition-duration: 200ms;
+//     border-radius: 0.4rem;
+// }
+
+// .taskHeader-info > .infoArrow {
+//     position: absolute;
+//     display: none;
+//     left: 1.6rem;
+//     top: 0;
+// }
+
+// .taskHeader-info > .infoPopup.hidden, .taskHeader-info > .infoArrow.hidden {
+//     display: none;
+// }
+
+// .taskHeader-info > .infoPopup.block, .taskHeader-info > .infoArrow.hidden {
+//     display: block;
+// }
+
+// .transition-child {
+//     transition-property: opacity;
+//     transition-timing-function: ease-out;
+//     transition-duration: 300ms;
+//   }
+  
+//   .transition-child.enter {
+//     opacity: 0;
+//   }
+  
+//   .transition-child.enter-active {
+//     opacity: 100;
+//   }
+  
+//   .transition-child.leave {
+//     opacity: 100;
+//   }
+  
+//   .transition-child.leave-active {
+//     opacity: 0;
+//   }
+
+@media (max-width: 1024px) {
+    .search-container {
+        width: 75%;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .search-container {
+        width: 75%;
+    }
+  }
+  

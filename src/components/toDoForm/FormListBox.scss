@@ -1,0 +1,96 @@
+@import '/src/styles.scss';
+
+.listBoxContainer {
+    width: 100%;
+    color: $slate400;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 0.4rem;
+    font-size: 1rem;
+
+    &-title {
+        font-weight: 600;
+        text-align: start;
+    }
+
+    .dropdown {
+        position: relative;
+        width: 100%;
+
+        &-menu {
+            font-size: 0.24rem;
+            padding: 0.5rem 0.75rem 0.5rem 0.75rem;
+            background: $slate900;
+            color: $slate400;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            border-radius: 0.4rem;
+            outline: 1px solid $slate800;
+            transition: outline 0.2s ease-in, box-shadow 0.2s ease-in;
+
+            &:hover {
+                outline: 2px solid $blue500;
+                box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.5);
+            }
+
+            > svg {
+                height: 1.40rem;
+                width: 1.40rem;
+            }
+        }
+
+        &-options {
+            position: absolute;
+            outline: 1px solid $slate800;
+            margin-top: 0.24rem;
+            padding: 0;
+            width: 100%;
+            z-index: 10;
+            font-size: 0.96rem;
+            list-style-type: none;
+            background: $slate900;
+            overflow-y: auto;
+            border-radius: 0.64rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+
+            .dropdown-option {
+                padding: 0.5rem 0.75rem 0.5rem 0.75rem;
+                cursor: pointer;
+                position: relative;
+
+                &:hover {
+                    color: $slate200;
+                    background-color: $blue500;
+                }
+
+                &-active {
+                    color: $slate200;
+                    background: $blue500;
+                }
+
+                &-inactive {
+                    color: $slate400;
+                }
+
+                &-selected {
+                    position: absolute;
+                    left: 0;
+                    display: flex;
+                    align-items: center;
+                    padding-left: 0.75rem;
+
+                    &.active {
+                        color: $slate300;
+                    }
+
+                    &:not(.active) {
+                        color: $blue500;
+                    }
+                }
+            }
+        }
+    }
+}
