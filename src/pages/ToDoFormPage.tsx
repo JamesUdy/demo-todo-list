@@ -5,7 +5,7 @@ import { useLocalStorage } from 'usehooks-ts'
 
 const ToDoFormPage = () => {
 
-  const [localStorageValue, setLocalStorageValue] = useLocalStorage(
+  const [localStorageValue, _] = useLocalStorage(
     "ToDoLists",
     toDoListData
   )

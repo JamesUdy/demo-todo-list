@@ -12,7 +12,7 @@ import { useLocalStorage } from 'usehooks-ts';
 import TaskDropdown from './TaskDropdown';
 
 const TaskRepositories = () => {
-  const [localStorageValue, setLocalStorageValue] = useLocalStorage(
+  const [localStorageValue, _] = useLocalStorage(
     "ToDoLists",
     toDoListData
   );

@@ -15,7 +15,7 @@ const ToDoCategory: React.FC<ToDoCategoryProps> = ({ formikForm }) => {
     <section className='listBoxContainer'>    
         <span className='listBoxContainer-title'>🚀 Priority Dropdown</span>
         <Listbox value={formikForm.values.taskPriority} onChange={(value: string) => formikForm.setFieldValue('taskPriority', value)}>
-          {({open}) => (
+          {({}) => (
             <div className='dropdown'>
               <Listbox.Button
                 as="button"

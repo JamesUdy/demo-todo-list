@@ -1,4 +1,3 @@
-import React from 'react';
 import './TaskLoader.css';
 
 const TaskLoader = () => {

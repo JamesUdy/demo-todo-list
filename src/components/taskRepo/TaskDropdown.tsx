@@ -1,6 +1,5 @@
 import { ChangeEvent, useState } from 'react';
 import { DownArrow, UpArrow } from '../../assets';
-import React from 'react';
 import "./TaskDropdown.scss"
 
 type Props = {

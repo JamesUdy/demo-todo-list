@@ -15,7 +15,7 @@ const ToDoStatus: React.FC<ToDoStatusProps> = ({ formikForm, showComplete }) => 
     <section className='listBoxContainer'>    
         <span className='listBoxContainer-title'>🔄️ Select Task Status</span>
         <Listbox value={formikForm.values.taskProgress} onChange={(value: string) => formikForm.setFieldValue('taskProgress', value)}>
-          {({open}) => (
+          {({}) => (
             <div className='dropdown'>
               <Listbox.Button
                 as="button"
